@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intercâmbio Esportivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      color: #333;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: linear-gradient(180deg, #1e3c72, #2a5298);
+      color: #fff;
+      height: 100vh;
+      padding: 20px 0;
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+
+    .sidebar a {
+      padding: 15px 30px;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .sidebar a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding-left: 35px;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 40px;
+      flex-grow: 1;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      display: none;
+      margin-bottom: 60px;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h1, h2 {
+      color: #1e3c72;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    iframe {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background-color: #fff;
+      padding: 30px;
+      text-align: center;
+      color: #666;
+      border-top: 1px solid #ccc;
+    }
+
+    footer h2 {
+      color: #1e3c72;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>🌐 Menu</h2>
+    <a onclick="showSection('inicio')">📖 Onde tudo começou</a>
+    <a onclick="showSection('sobre')">🌍 Sobre o Projeto</a>
+    <a onclick="showSection('beneficios')">💡 Benefícios</a>
+    <a onclick="showSection('areas')">📚 Áreas do Conhecimento</a>
+    <a onclick="showSection('equipe')">👥 Equipe</a>
+    <a onclick="showSection('video')">🎥 Vídeo</a>
+  </div>
+
+  <div class="main-content">
+    <section id="inicio" class="active">
+      <h1>📖 Onde tudo começou</h1>
+      <p>O projeto Intercâmbio Esportivo nasceu dentro da disciplina de Projeto de Ano Letivo...</p>
+      <p>Hoje, o Intercâmbio Esportivo é mais do que um simples trabalho escolar. É uma proposta que visa transformar vidas por meio do esporte e da educação internacional.</p>
+    </section>
+
+    <section id="sobre">
+      <h2>🌍 Sobre o Projeto</h2>
+      <p>O projeto Intercâmbio Esportivo nasceu da junção de duas grandes paixões...</p>
+      <ul>
+        <li>🏃 Aprimorar habilidades esportivas</li>
+        <li>🌐 Conhecer novas culturas</li>
+        <li>🤝 Desenvolver autonomia e trabalho em equipe</li>
+        <li>🗣️ Aprender ou praticar idiomas</li>
+        <li>🔗 Construir conexões internacionais</li>
+      </ul>
+    </section>
+
+    <section id="beneficios">
+      <h2>💡 Benefícios do Intercâmbio</h2>
+      <ul>
+        <li>🏋️ Melhoria no desempenho esportivo</li>
+        <li>⚽ Contato com diferentes métodos de treinamento</li>
+        <li>🧠 Aprendizado de novos idiomas</li>
+        <li>🌎 Ampliação da visão de mundo</li>
+        <li>🧭 Desenvolvimento pessoal e social</li>
+        <li>🤝 Construção de laços internacionais</li>
+        <li>💪 Fortalecimento da autoestima e independência</li>
+      </ul>
+    </section>
+
+    <section id="areas">
+      <h2>📚 Áreas do Conhecimento Relacionadas</h2>
+      <ul>
+        <li><strong>Linguagens:</strong> Essencial para comunicação intercultural e aprendizado de idiomas.</li>
+        <li><strong>Ciências Humanas:</strong> Compreensão de aspectos culturais, sociais e históricos.</li>
+        <li><strong>Ciências da Natureza:</strong> Relacionadas ao corpo humano e saúde no esporte.</li>
+        <li><strong>Matemática:</strong> Planejamento financeiro do intercâmbio.</li>
+        <li><strong>Tecnologia da Informação:</strong> Criação e manutenção do app do projeto.</li>
+        <li><strong>Projeto de Vida:</strong> Definição de metas, planejamento e autoconhecimento.</li>
+      </ul>
+    </section>
+
+    <section id="equipe">
+      <h2>👥 Equipe</h2>
+      <ul>
+        <li><strong>Ícaro Gonçalves</strong> – Responsável pelo desenvolvimento do site...</li>
+        <li><strong>Lucas Goulart</strong> – Contribuiu com ideias centrais para o projeto...</li>
+        <li><strong>Diogo Martins</strong> – Atuou na criação de conteúdos e definição dos benefícios...</li>
+        <li><strong>Daniel Zanelli</strong> – Colaborou na pesquisa e organização das informações...</li>
+      </ul>
+    </section>
+
+    <section id="video">
+      <h2>🎥 Vídeo do Projeto</h2>
+      <p>Assista ao vídeo abaixo para saber mais sobre o nosso projeto:</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <footer id="contato">
+      <h2>Fale com a Gente!</h2>
+      <p>Tem alguma dúvida, sugestão ou quer saber mais sobre o projeto? Estamos sempre prontos para conversar!</p>
+      <p>
+        📱 WhatsApp: <strong>+55 (15) 99844-6982</strong><br/>
+        📧 E-mail: <strong>contatoicarogoncalves@gmail.com</strong>
+      </p>
+      <p>&copy; 2025 Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
