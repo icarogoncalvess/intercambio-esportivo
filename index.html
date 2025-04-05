@@ -16,17 +16,18 @@
       font-family: 'Poppins', sans-serif;
       background-color: #f0f4f8;
       display: flex;
+      flex-direction: column;
       color: #333;
     }
 
     .sidebar {
-      width: 250px;
+      width: 100%;
+      max-width: 250px;
       background: linear-gradient(180deg, #1e3c72, #2a5298);
       color: #fff;
-      height: 100vh;
+      height: auto;
       padding: 20px 0;
-      position: fixed;
-      left: 0;
+      position: relative;
       top: 0;
       display: flex;
       flex-direction: column;
@@ -54,7 +55,7 @@
     }
 
     .main-content {
-      margin-left: 250px;
+      margin-top: 20px;
       padding: 40px;
       flex-grow: 1;
       animation: fadeIn 0.6s ease-in-out;
@@ -103,6 +104,26 @@
       color: #1e3c72;
       margin-bottom: 10px;
     }
+
+    @media (max-width: 600px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        max-width: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      h1, h2 {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -114,93 +135,4 @@
     <a onclick="showSection('beneficios')">💡 Benefícios</a>
     <a onclick="showSection('areas')">📚 Áreas do Conhecimento</a>
     <a onclick="showSection('equipe')">👥 Equipe</a>
-    <a onclick="showSection('video')">🎥 Vídeo</a>
-  </div>
-
-  <div class="main-content">
-    <section id="inicio" class="active">
-      <h1>📖 Onde tudo começou</h1>
-      <p>O projeto Intercâmbio Esportivo nasceu dentro da disciplina de Projeto de Ano Letivo, uma aula voltada para o desenvolvimento de ideias inovadoras e projetos autorais ao longo do ano. Tudo começou com um simples gosto compartilhado entre os integrantes: a paixão por esportes e o interesse por viagens.</p>
-      <p>Com o tempo, percebemos que poderíamos unir essas duas paixões em algo maior e mais significativo. A partir dessa combinação surgiu a proposta de um intercâmbio voltado para o esporte — uma oportunidade de levar jovens atletas para vivenciar experiências internacionais através de atividades esportivas.</p>
-      <p>A ideia rapidamente ganhou força entre o grupo, que se dedicou a estruturar o projeto de forma realista e impactante. Pensamos em como essa vivência poderia contribuir não só no aspecto técnico do esporte, mas também na formação pessoal dos participantes.</p>
-      <p>Hoje, o Intercâmbio Esportivo é mais do que um simples trabalho escolar. É uma proposta que visa transformar vidas por meio do esporte e da educação internacional.</p>
-    </section>
-
-    <section id="sobre">
-      <h2>🌍 Sobre o Projeto</h2>
-      <p>O projeto Intercâmbio Esportivo nasceu da junção de duas grandes paixões: o amor pelo esporte e o interesse por viagens e culturas diferentes. A ideia central é proporcionar a jovens atletas uma oportunidade única de crescimento pessoal, esportivo e cultural por meio de experiências internacionais.</p>
-      <p><strong>🎯 Objetivo:</strong> Criar oportunidades de trocas culturais entre estudantes por meio de atividades esportivas em outros países.</p>
-      <ul>
-        <li>🏃 Aprimorar habilidades esportivas</li>
-        <li>🌐 Conhecer novas culturas</li>
-        <li>🤝 Desenvolver autonomia e trabalho em equipe</li>
-        <li>🗣️ Aprender ou praticar idiomas</li>
-        <li>🔗 Construir conexões internacionais</li>
-      </ul>
-      <p><strong>🔧 Como funciona:</strong> Os participantes treinam em centros esportivos no exterior, vivem com famílias anfitriãs, participam de eventos e recebem suporte completo.</p>
-      <p><strong>👥 Público-Alvo:</strong> Estudantes do ensino médio com prática esportiva regular e interesse em intercâmbio.</p>
-      <p><strong>🌟 Visão de Futuro:</strong> Tornar-se uma referência em intercâmbio esportivo, conectando culturas e transformando vidas.</p>
-    </section>
-
-    <section id="beneficios">
-      <h2>💡 Benefícios do Intercâmbio</h2>
-      <ul>
-        <li>🏋️ Melhoria no desempenho esportivo</li>
-        <li>⚽ Contato com diferentes métodos de treinamento</li>
-        <li>🧠 Aprendizado de novos idiomas</li>
-        <li>🌎 Ampliação da visão de mundo</li>
-        <li>🧭 Desenvolvimento pessoal e social</li>
-        <li>🤝 Construção de laços internacionais</li>
-        <li>💪 Fortalecimento da autoestima e independência</li>
-      </ul>
-    </section>
-
-    <section id="areas">
-      <h2>📚 Áreas do Conhecimento Relacionadas</h2>
-      <ul>
-        <li><strong>Linguagens:</strong> Essencial para comunicação intercultural e aprendizado de idiomas.</li>
-        <li><strong>Ciências Humanas:</strong> Compreensão de aspectos culturais, sociais e históricos.</li>
-        <li><strong>Ciências da Natureza:</strong> Relacionadas ao corpo humano e saúde no esporte.</li>
-        <li><strong>Matemática:</strong> Planejamento financeiro do intercâmbio.</li>
-        <li><strong>Tecnologia da Informação:</strong> Criação e manutenção do app do projeto.</li>
-        <li><strong>Projeto de Vida:</strong> Definição de metas, planejamento e autoconhecimento.</li>
-      </ul>
-    </section>
-
-    <section id="equipe">
-      <h2>👥 Equipe</h2>
-      <ul>
-        <li><strong>Ícaro Gonçalves</strong> – Responsável pelo desenvolvimento do site e pela estrutura organizacional do projeto. Ícaro é apaixonado por esportes e tecnologia, e foi um dos primeiros a imaginar como seria unir essas paixões em algo transformador.</li>
-        <li><strong>Lucas Goulart</strong> – Contribuiu com ideias centrais para a construção do projeto, especialmente nos aspectos esportivos e culturais. Lucas é comprometido com a ideia de usar o esporte como ferramenta de mudança.</li>
-        <li><strong>Diogo Martins</strong> – Atuou ativamente na criação dos conteúdos e na definição dos benefícios do projeto. Diogo sempre busca tornar o projeto mais inclusivo e acessível.</li>
-        <li><strong>Daniel Zanelli</strong> – Colaborou na pesquisa e organização das informações, ajudando a construir a base teórica e prática do intercâmbio. Daniel trouxe ótimas contribuições sobre as áreas do conhecimento envolvidas.</li>
-      </ul>
-    </section>
-
-    <section id="video">
-      <h2>🎥 Vídeo do Projeto</h2>
-      <p>Assista ao vídeo abaixo para saber mais sobre o nosso projeto:</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-    </section>
-
-    <footer>
-      <h2>Fale com a Gente!</h2>
-      <p>Tem alguma dúvida, sugestão ou quer saber mais sobre o projeto? Estamos sempre prontos para conversar!</p>
-      <p>
-        📱 WhatsApp: <strong>+55 (15) 99844-6982</strong><br/>
-        📧 E-mail: <strong>contatoicarogoncalves@gmail.com</strong>
-      </p>
-      <p>&copy; 2025 Todos os direitos reservados.</p>
-    </footer>
-  </div>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll("section").forEach((section) => {
-        section.classList.remove("active");
-      });
-      document.getElementById(id).classList.add("active");
-    }
-  </script>
-</body>
-</html>
+    <a onclick="showSection('video
