@@ -45,6 +45,7 @@
       color: #fff;
       transition: all 0.3s ease;
       font-weight: 500;
+      cursor: pointer;
     }
 
     .sidebar a:hover {
@@ -108,12 +109,12 @@
 
   <div class="sidebar">
     <h2>🌐 Menu</h2>
-    <a href="#inicio" onclick="showSection('inicio')">📖 Onde tudo começou</a>
-    <a href="#sobre" onclick="showSection('sobre')">🌍 Sobre o Projeto</a>
-    <a href="#beneficios" onclick="showSection('beneficios')">💡 Benefícios</a>
-    <a href="#areas" onclick="showSection('areas')">📚 Áreas do Conhecimento</a>
-    <a href="#equipe" onclick="showSection('equipe')">👥 Equipe</a>
-    <a href="#video" onclick="showSection('video')">🎥 Vídeo</a>
+    <a onclick="showSection('inicio')">📖 Onde tudo começou</a>
+    <a onclick="showSection('sobre')">🌍 Sobre o Projeto</a>
+    <a onclick="showSection('beneficios')">💡 Benefícios</a>
+    <a onclick="showSection('areas')">📚 Áreas do Conhecimento</a>
+    <a onclick="showSection('equipe')">👥 Equipe</a>
+    <a onclick="showSection('video')">🎥 Vídeo</a>
   </div>
 
   <div class="main-content">
@@ -182,7 +183,7 @@
       <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
     </section>
 
-    <footer id="contato">
+    <footer>
       <h2>Fale com a Gente!</h2>
       <p>Tem alguma dúvida, sugestão ou quer saber mais sobre o projeto? Estamos sempre prontos para conversar!</p>
       <p>
@@ -194,11 +195,11 @@
   </div>
 
   <script>
-    function showSection(sectionId) {
-      document.querySelectorAll('section').forEach(section => {
-        section.classList.remove('active');
+    function showSection(id) {
+      document.querySelectorAll("section").forEach((section) => {
+        section.classList.remove("active");
       });
-      document.getElementById(sectionId).classList.add('active');
+      document.getElementById(id).classList.add("active");
     }
   </script>
 </body>
