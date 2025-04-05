@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Intercâmbio Esportivo</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
@@ -15,65 +15,41 @@
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f0f4f8;
-      display: flex;
-      flex-direction: column;
       color: #333;
     }
 
     .sidebar {
       width: 100%;
-      max-width: 250px;
       background: linear-gradient(180deg, #1e3c72, #2a5298);
       color: #fff;
-      height: auto;
-      padding: 20px 0;
-      position: relative;
+      padding: 10px;
+      position: fixed;
       top: 0;
-      display: flex;
-      flex-direction: column;
+      left: 0;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     }
 
     .sidebar h2 {
       text-align: center;
       font-size: 22px;
-      margin-bottom: 40px;
     }
 
     .sidebar a {
-      padding: 15px 30px;
+      display: block;
+      padding: 15px;
       text-decoration: none;
       color: #fff;
-      transition: all 0.3s ease;
       font-weight: 500;
-      cursor: pointer;
-    }
-
-    .sidebar a:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding-left: 35px;
+      text-align: center;
     }
 
     .main-content {
-      margin-top: 20px;
-      padding: 40px;
-      flex-grow: 1;
-      animation: fadeIn 0.6s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      margin-top: 100px; /* Espaço abaixo da sidebar fixa */
+      padding: 20px;
     }
 
     section {
-      display: none;
-      margin-bottom: 60px;
-      animation: fadeIn 0.6s ease-in-out;
-    }
-
-    section.active {
-      display: block;
+      margin-bottom: 40px;
     }
 
     h1, h2 {
@@ -83,41 +59,36 @@
 
     ul li {
       margin-bottom: 10px;
-      line-height: 1.6;
     }
 
     iframe {
       max-width: 100%;
+      height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     footer {
       background-color: #fff;
-      padding: 30px;
+      padding: 20px;
       text-align: center;
       color: #666;
       border-top: 1px solid #ccc;
     }
 
-    footer h2 {
-      color: #1e3c72;
-      margin-bottom: 10px;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        flex-direction: column;
+    @media (max-width: 768px) {
+      .sidebar {
+        position: static;
+        text-align: center;
       }
 
-      .sidebar {
-        width: 100%;
-        max-width: none;
+      .sidebar h2, .sidebar a {
+        margin: 5px;
       }
 
       .main-content {
-        margin-left: 0;
-        padding: 20px;
+        margin: 0;
+        padding: 10px;
       }
 
       h1, h2 {
@@ -127,12 +98,35 @@
   </style>
 </head>
 <body>
-
   <div class="sidebar">
     <h2>🌐 Menu</h2>
     <a onclick="showSection('inicio')">📖 Onde tudo começou</a>
     <a onclick="showSection('sobre')">🌍 Sobre o Projeto</a>
     <a onclick="showSection('beneficios')">💡 Benefícios</a>
-    <a onclick="showSection('areas')">📚 Áreas do Conhecimento</a>
+    <a onclick="showSection('areas')">📚 Áreas</a>
     <a onclick="showSection('equipe')">👥 Equipe</a>
-    <a onclick="showSection('video
+    <a onclick="showSection('video')">🎥 Vídeo</a>
+  </div>
+
+  <div class="main-content">
+    <section id="inicio" class="active">
+      <h1>📖 Onde tudo começou</h1>
+      <p>Descrição do projeto...</p>
+    </section>
+
+    <!-- Mais seções -->
+    <footer>
+      <p>&copy; 2025 Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("section").forEach((section) => {
+        section.style.display = "none";
+      });
+      document.getElementById(id).style.display = "block";
+    }
+  </script>
+</body>
+</html>
